@@ -1,0 +1,445 @@
+
+ NOTE : //: yeh keval line sepearte kar raha hai yeh commands ka part nahi hai
+
+
+#: Some linux Commands 
+
+//: cd (for changing dirctory or folder )
+//: cp (for copying folder )
+//: rm (for removing folder )
+//: mv (for moving folder )
+//: mkdir (for making dirctory or folder )
+//: rmdir (for removing dirctory or folder )
+//: ls ( list of all folders or directories inside that folder which is selected )
+//: ls -a (list of all hidden folders ) 
+//: ls -l (list of all folders with permissions  ) 
+//: ls -la (list of all folders and hidden folders with permissions ) 
+//: pwd ( shows the present working dirctory )
+
+----------------------------------#: Git global and local configuration commands
+GLOBAL configuration is used to configure the git for the repos that your need to work for global files like github , but local config of git is used to store data in git repository locally in your system.
+
+-- To set the local configuration ( Kindof Storing the data in local system of that git repository )
+//: git config --local project.name "apna naam"
+( Note: In this project is a section and name is key and apna naam is value. Git can be used to store data in local system )
+
+-- To get the value set on key name
+//: git config --get user.name ( to get the value set on key name and can be use to get anything you've stored  in git globally or locally )  
+
+-- To unset the value set on key name
+//: git config --unset user.name ( to unset the value set on key name , Example : git config --unset user.email , git config --unset project.name ) NOTE: Here user, project are the section and name is the key
+NOTE: This unset git command can only be used to unset the value set on key ( Key value pair ) and not on section ( Example: git config --unset user.name ✅ git config --unset user ❌)
+
+-- To remove the section
+//: git config --remove-section sectionName ( to remove the section ) 
+(Example: git config --remove-section user )
+
+
+//: git config --list ( To show all the configuration )
+//: git config --global init.defaultBranch "main" // to set the default branch to main
+//: git config --global user.name "apna naam"
+//: git config --global user.email "apna email"
+//: git config --global core.editor "code --wait" // to config code editor , because if we commit without message , then it will open vim in default code editor
+//: git config --global core.autocrlf "input" // to set the line endings to LF, // How to setup this please check with online also before doing anything.
+
+
+--------------------------------------- #: Git Basic Commands --------------------------------------------
+//:   git status ( for checking that git is tracking that particular folder or not )
+
+//: git init ( for initialization of git in that particular folder or directory ) 
+
+//: git add . ( this will add the changes in staged changes , this dot . is to represent that all directories or folders in the main folder will be added to the staged changes)
+//: git add foldername.extenstionName ( we can also provide a particular folder that we need to add to the staged changes , matlab agar hum kisi folder ya file me kaam kar rahe hai aur bas usse hi chahte hai ki changes me push ho to keval usko hi add kar sakte hai baaki add nahi honge )
+//: git rm fileName ( to remove from staged changes ) 
+
+//: git commit -m "any message we want to add" 
+//: git commit (yese karoge to vsCode open hojaega , commit must need a message )
+
+NOTE: git commit ( bina message add kiye agar vsCode ka terminal open hota hai to vo vim hai , vim bohot professional level ka hai , to vim me stuck begineer ho jate hai , vim ko exit karne ke liye q! enter kardena )
+
+NOTE: commit ( commit ka matlab hai check points , jaise games me check point hota hai na ki yaha pe game save karlia hai to agar aage koi mission me gadbad hui to restart iss saved checkpoint se kar sakte hai , vaise hi checkpoint ko git me commit kahate hai )
+
+//: git log 
+//: git log --oneline
+//: git log --oneline --graph --all ( to see the commits in a graph format )
+//: git log --oneline --graph --all --parents ( to see with parents HASH Codes / Sha values )
+//: git log --oneline --graph --all --decorate ( to see the commits in a graph format with the commit messages )
+
+//: git config --global user.name "apna naam"
+//: git config --global user.email "apna email"
+
+//: git config --global core.editor "code --wait" // to config code editor , because if we commit without message , then it will open vim in default code editor
+
+#To add new key/value pair 
+
+//: git config --add --local netflix.ceo "anurag" 
+
+//: .gitignore ( .gitignore file ke andar jitne bhi folder name aur file name daloge to vo folder aur files track nahi hogi , ya private rahegi , jaise kisi company ke private aws keys ya koi software keys aur data hota hai to vo open source me push nahi hona chaiye )
+//NOTE: when working on a project having lots of lots of files , then how to add or even how to know which files are needed to be added in .gitignore , use : git ignore generator ( search on google )
+
+//: git branch ( to know the branch , Master or other , Master is the main time line branch , and on that main time line branch we can add multiple nodes that act as multiple other timeline branches NOTE: those nodes are commits on the main master branch)
+
+//: git branch branchName ( how to add new branch )
+
+Example: if a team of developers working on a project design , and you're working on the nav bar , then you can add that 
+
+git branch nav-bar 
+
+
+< How to move to that branch , matalb , new branch create karna to aagya but new branch ya koi bhi branch jo master se alag hai uspe move kaise karenge , kyuki abhi bhi agar hum dekhenge , head master ko hi reference kar raha hai >
+
+//: git checkout branchName 
+EXAMPLE: git checkout nav-bar
+
+// some basic git commands 
+//: git branch -M changeBranchName ( to change the branch name )
+//: git status 
+//: git init
+//: git log 
+//: git log --oneline 
+//: git branch ( To know the total number of branches )
+//: git switch branchName ( to switch to that particular branch )  //: 
+//: git branch -b branchName ( to create a new branch and move to that branch )
+//: git switch -c branchName ( to create a new branch and move to that branch )
+
+< To delete a branch >
+//: git branch -d branchName
+
+< To know the difference between previous and after of something like previous staged changes and after staged changes or anything >
+< use git diff >
+//: git diff branchOneName branchTwoName //: git diff branchOneName...branchTwoName
+
+//: git diff --staged ( to know difference between staged changes like what the file looks like before and after making changes )
+NOTE: EXAMPLE: 
+( first make some changes in a file ,
+then add the file using git add 
+then , it is now in staged changes state )
+
+
+NOTE: we can know difference of 100 of 1000 of files staged changes at single time , there's no limitation
+
+NOTE: --- , and +++ sybmol just a representation of previous and after files 
+
+< git stash , yeh command very very carefully use karna hota hai , yeh command tab use karna hai jab jaise manlo hum ek branch pe kaam kar rahe hai aur hume kisi vajah se dusari branch ka code pe kaam karna pade , par hum jis branch pe kaam kar rahe the usska kaam abhi poora nahi hua hai aur hum nahi chahate ki hum uss code ko staged changes me add kare aur commit kare , to hum temporarly uss code ko ek shelf pe rakh denge , using git stash > 
+< aur jab hum uss temporarly code jo ek shelf pe rakha hai access karna chahate hai to git stash pop use karke access kar sakte hai >
+//: git stash ( to stash the code temporarly to the shelf )
+//: git stash pop ( to access the stashed code )
+//: git stash list ( as there may be many stashed codes on the shelf of different branches and by different developers , so to know all the codes that are there on the shelf we use git stash list )
+//: git stash apply "stash@{indexNumber}"  ( this is to get only that code that we stashed after knowing all the difference stashed codes present on that shelf )
+
+
+NOTE: We can also check code files of every commit done , matlab , humne apne code me jab jab changes kiye tab tab commit bhi kiye honge jo hum (//: git log) se dekhte hai , to har commit ke pass apni ek hash id bhi hoti hai , hum uss particular commit pe jaa sakte hai , in technical terms , matlab hum us commit pe head ko point kar wa sakte hai , ya bhej sakte hai
+using : //: git checkout commitHashCode ( commitHashCode can be found using git log )
+
+NOW: abh uss particular commit se head ko vapis laane ke liye simply use kar skate hai 
+//: git checkout master ( to come back to master branch )
+
+NOTE: in some rare case if we want to go particularly back to the previous file , matlab head ko keval jaha se laye ho uss commit ya file ya branch pe vapis leke jana hai to we can also use
+//: git reflog // but this is not recommended
+
+//: git restore ( it retore the file to the last commit , just last commit , it cannot restore infinity in time back ) 
+
+****************************** Powerful command use with ultra caution
+
+//: git rebase branchName ( generaly recommended not to rebase on master branch )
+
+NOTE: rebase use karse se uss particular branch ko jis bhi branch me rebase kar rahe ho , vaha vali saari commits rewrite ho jayege , matalb jaise maanlo , apne pass 2 branches hai , 1st master branch and 2nd bugfix branch , to apne ko yeh to pata hai ki master branch pe rebase nahi use karni hai, to hum use karenge bugfix branch pe (//: git rebase master ) to hum bugfix ke andar jitna bhi code kia hai , aur jitna bhi commit kia hai vo sab master branch me merge hojaega.
+
+
+***************************** SOME ADVANCE Git Commands ****************************
+
+
+//: git blame fileName ( Example : git blame index.js , to show how many commits are there in index.js file and who did those changes ) 
+
+
+
+//: git show commitID ( to show what changes have been made in this commit ) 
+
+
+//: git reset --hard commitID ( to reset the head and code to the selected commit , this will reset and erase all the commit made after that selected commit ) 
+
+NOTE : if you reset your code to any of the previous commits , and you wish to push your code to the remote server i.e. gitHub also , then you need to use 
+//: git push -f  ( -f means force push ) 
+
+//: git revert commitID ( this will add the code of the selected commitID and after saving that code and git add and git commit , this will create new commit and will NOT DELETE the previous commits 
+( RECOMMENDED if you need any previous sourceCode commited to the sourceControl
+
+
+
+------------------------------------------ #GitHub Commands ----------------------------------------
+
+
+NOTE: Generally remote repo name is set to origin in software world
+
+//: git remote -v ( this is to check whether we have already made connection between our local repo and remote repo ) 
+
+//: git remote add name url ( this is to make connection between our local repo and remote repo ) 
+NOTE: name refers to the remote repo name like in local repo gitONe or any name of the folder that we have initialized git , similarly for uploading our this local repo to remote we need to provide a name of a folder(  or repo in software world ) 
+
+//: git remote rename oldName newName ( to change the remote repo name ) 
+
+//: git remote remove name ( to remove the repo ) 
+
+_____________________________________________________________________________________
+
+
+//: git merge origin/RemoteRepoBranchName ( to merge in your local repo branch from your remote repo branch )
+
+//: git push remoteRepoName branchName ( NOTE: this will only work for 1st time , after that this will not work, git push origin main karte huye ek error aaega ki bhai aap push to kar rahe ho firse par aap yese kyu kar rahe ho , yese karne se aapka time bhi jyada lag raha hai aur aapko baar baar git push remoteRepoName branchName likhna pad raha hai, isko yese samajh sakte hai ki jaise humare branch jisko hum push kar rahe hai aur remoteRepo jaha push kar rahe hai unke beech me koi highway hi nahi hai jaha se saara code easily travle karke jaa sake , to ek highway bana na padega taki efficiently code push ho sake aur baar baar yesa naa likhna pade ,)
+
+//: git push -u remoteRepoName branchName ( -u sets the upstream between remoteRepo and branchName < yehi apna highway lol > )
+
+NOTE: abh kyuki remote Repo aur local branch ke beech me upstream establish ho gaya hai to hum keval //: git push hi use kar sakte hai 
+
+//: git push ( this will push the commit code change to the remote repo ) NOTE: only push between selected remote repo and selected branch 
+EXAMPLE : git push -u origin main
+
+git push 
+
+( abh aagar humare pass local me multiple branches hai jisme hum work kar rahe hai to unko push karne ke liye humne unme jaake remote connection save karna hoga ) 
+
+NOTE: Generally it is recommended that you push only your main branch in remote repo as it is the main source code of your project , you can work on mulitple branches in your local repo and then after satisfaction with the changes you made in those branches , you merge the branch in your main branch and then for saving the project in clouds you push your main branch sourceCode ) 
+
+____________________________________________________________________________________________________
+
+//: git clone url ( url : yaha jaise gitHub pe jake kisi ka bhi sourceCode apne local machine me download as a zip karte hai vaise hi hum direct command line se kar sakte hai , url vahi miljaega HTTPS format vala ) 
+
+//: git fetch RemoteRepoName ( yeh tab kaam aata hai jaise kisi sourceCode ya project pe mulitple contributors kaam kar rahe hai aur remote repo me push kar rahe hai , to hume baar baar source code fresh chaiye , to tab hum fetch use karte hai and keval agar fetch use kia to hum dekh sakte hai ki abhi freshly sourceCode me kya update hua hai, and agar jo changes main kar raha hu usme yeh changes already hai ,ya kahi yeh code mere code ko break to nahi kardega , to keval //: git fetch use karke hum uss remoteRepo ( jo humne already //: git remote -v or //: git remote add name url me save kia hua hai apne local repo me ) vaha se laa sakte hai aur dekh sakte hai 
+
+NOTE: uss code ke fir //: git fetch ke baad //: git merge se merge bhi karna padega 
+
+//: git pull RemoteRepoName RemoteRepoBranchName ( git fetch + git merge ) ( yeh tab kaam ata hai jab hume pata hai ki yeh freshly code hume directly apne local repo ki branch me merge karna hai ) 
+
+_____________________________________________________________________________________
+
+
+//: git merge origin/RemoteRepoBranchName --allow-unrelated-histories
+
+( yeh jab use hoga jab humare local machine me aur github pe alag alag repo hogi aur hume usko apne local me merge karna hai ) ( CHAT GPT : You're seeing the "refusing to merge unrelated histories" error because Git is trying to merge two projects that are not related to each other. This typically occurs when a repository is initialized separately in two different places and you're trying to merge them.
+
+Starting with Git 2.9, the merge command defaults to --allow-unrelated-histories. So, you need to tell Git to allow the merge between two unrelated repositories. To do this, use the --allow-unrelated-histories option with the git merge command: )
+
+                                            #ThePrimaeAgen
+________________________________________________________________________________________
+
+#Git By Primeagen 
+
+#git config 
+
+//: git config --global sectionName.keyName "valueName"
+Example: git config --global user.name "anurag"
+
+//: git config --add --global sectionName.keyName "valueName"
+
+//: git config --global --unset user.name 
+//: git config --global --unset-all user.name ( if you have multiple user.name values )
+
+//: git config --remove-section sectionName
+Example : git config --global --remove-section user
+
+
+#git branch
+
+//: git branch ( to get or know current branch )
+
+//: git branch -m oldBranchName newBranchName
+Example: git branch -m master main
+
+//: git checkout -b branchName ( to switch and make that branch )
+//: git switch -c branchName ( same as above )
+
+//: git branch -d branchName ( to delete a branch )
+
+
+
+
+# git merge ( merging branch )
+//: git merge branchName 
+Note: Merge Base 
+Note : fast_forward merge
+
+
+
+
+#git rebase 
+
+//: git rebase branchName ( To rebase the branch )
+NOTE: Generally done on main branch from another working branch
+
+
+# git rebase as squash
+
+# methods of deleting git history 
+
+1st : by making orphan branch
+
+{
+    //: git checkout --orphan newBranchName ( this will create a new branch with not commit shahs and no commit histories )
+    git add -A ( this will add all the unstaged files )
+    git commit -m 'Squashed histories'
+    git branch -D main
+    git branch -m main
+    git push --set-upstream origin main
+
+}
+
+2nd : (Safer Option) By creating another branch and rebasing and merging (squash method)
+
+{
+    //: git checkout -b newBranchName
+        git reset --soft $(git rev-list --max-parents=0 HEAD)  # Reset to root commit
+        git commit -m "Squashed history"
+        git checkout main
+        git merge newBranchName
+
+
+
+        (If done On main branch)
+        git checkout main
+        git reset --soft $(git rev-list --max-parents=0 HEAD)  # Reset to root commit
+        git commit -m "Squashed history"                       # New single commit
+        git push -f origin main                               # Force push (⚠️ destructive)
+}   
+
+
+3rd : Reinitialize Repo
+{
+    rm -rf .git       # Delete Git history (local only)
+    git init          # Reinitialize
+    git add -A
+    git commit -m "Fresh start"
+    git remote add origin <remote-url>  # Re-link to remote
+    git push -f origin main             # Force push (⚠️ overwrites remote)
+}
+
+
+
+#git reset
+
+//: git reset --soft commitHashCode ( To reset the code to the selected commit )
+NOTE: --soft is used to reset to the point you want while mainting the current changes whether it is uncommitted or committed it becomes staged and the previous committed changes ( commit hash where you're going / resetting git to ) will become staged 
+
+//: git reset --hard commitHashCode ( To reset the code to the selected commit )
+
+//: git commit --amend ( To amend the commit )
+(NOTE: yeh tab use hoga jab tumhe previous git commit ka message change karna ho, but note karna ki yeh hash change karta hai yaani new commit bana dega aur vo previous commit aur uska hashcode gayab ho jaega hamesha ke liye )
+
+//: git commit --amend --no-edit ( To amend the commit without editing the message )
+
+//: git reflog ( To see the reflog )
+( NOTE: yeh reflog bhohot kaam ka hai , yeh tab use hoga jab humse galti se koi bug-fix branch ya fir koi bhi branch mai me merge karne ki jagha delete hojaye to hum git reflog use karke fir ya to HEAD ( HASH CODE ) ke andar dekh sakte hai ki kya content / files thi ( git cat-file -p shaValue ) ya fir direct liye HASH CODE ko copy karke git merge HASHCODE karskte hai )
+
+.gitignore file ( 
+
+    NOTE: A project can have multiple .gitignore files , .gitignore file can be used to ignore the files and folders in 
+    that director and subdirectories, it has no access beyond the parent/current directory )
+    
+    .txt ( To ignore the .txt file )
+    *.txt ( To ignore all the .txt files )
+    /folderName ( To ignore the folderName inside all files and folders )
+    folderName ( To ignore the folderName folder )
+    !Important.txt ( To not ignore that Important.txt file )
+)
+
+
+------------------------------# NOTE: To solve the Multiples conflicts in the files 
+//: git checkout --theirs folderName/fileName ( to checkout and staged the changes and solve the conflicts from their (incoming changes) changes in that file )
+
+//: git checkout --ours folderName/fileName ( to checkout and staged the changes and solve the conflicts from our (current changes) changes in that file )
+
+------------------------------# NOTE: rerere config ( reues recorded resolutions )
+//: git config --global rerere.enabled true ( to enable the rerere )
+//: git config --global --unset rerere.enabled ( to disable the rerere )
+( It can resolve the conflicts in the files and folders that are occured due to rebase or merge conflicts automatically that are recored previously in the same file for different branch.)
+
+
+---------------------------------------Squashing commits using rebase ( it squashes the commits in a single commit without changing the data of a file)
+//: git rebase -i HEAD~n ( n stands for number example: HEAD~3 , to rebase the last 3 commits )
+
+
+--------------------------------------------------stash
+//: git stash ( to stash the code temporarly to the shelf , which is like a stack called stash stack)
+//: git stash pop ( to access the recently stashed code on top of the stash stack and delete that stash)
+//: git stash list ( to see the list of all the stashed codes )
+//: git stash apply ( to apply the stashed code on top of the stash stack without deleting the stash )
+//: git stash apply "stash@{indexNumber}" ( to apply the stashed code on top of the stash stack with particular indexnumber)
+//: git stash drop ( to drop the stashed code from the stash stack meaning it will be deleted )
+//: git stash drop "stash@{indexNumber}" ( to apply the stashed code on top of the stash stack and delete that particular stash )
+
+
+
+--------------------------------------commit amend 
+//: git commit --amend fileName ( to amend the commit )
+It is useful when you've made some changes in the code but you may or maynot want to change the commit message and also you don't want to create a new commit , This helps in "not" creating unnecessary small commits
+
+commands: 
+//: git commit -m"new message" --amend fileName ( to amend the commit and change the commit message )
+//: git commit --amend --no-edit fileName ( to amend the commit without editing the message )
+//: git commit -am"new message" --amend ( to amend the commit and change the commit message and also include the changes in the code or the file )
+//: git commit -a --amend --no-edit ( to amend the commit and include the changes in the code or the file without changing the commit message NOTE: this will add all the changed made in all the files or folders and subfolders , Remember : commit -a command is just like git add . , so it will add all the changes done in all the files or folders )
+
+
+
+-----------------------------------------revert command 
+//: git revert commitHashCode ( to revert the code to the selected commit )
+NOTE: This will revert the code to the selected commit and create a new commit with the changes made in that commit.
+
+-------------------------------------------cherry-pick command
+
+//: git cherry-pick commitHashCode ( This command is useful if you have a particular commit in your another / fix / feature branch and you want to add that code in that commit to the main / production / release branch so that that particular feature or a bug fix can be delivered to production and users or customers can have no issues on their product or app or service.)
+Example : on main branch > git cherry-pick commitHashCode(from fixBug branch)
+
+
+-------------------------------------------- git bisect command
+//: git bisect start 
+git bisect good commitHashCode 
+git bisect bad commitHashCode
+git bisect reset 
+( NOTE: This bisect command is usefull in case when you need to find a particular commit in a long commit history , It works on the principle of binary search , as we got commits in time stamps.)
+
+--------------------------------------------- git worktree
+Main worktree ( main worktree is the working repo or working directory where your original .git dirctory resides. It is the root of your directory where your .git file is )
+
+Linked worktree ( linked worktree are the working directories made with the reference to the original .git directory having .git file ( referenced to original .git dirctory or folder in your orignal project folder ) This is very useful instead of making new branches , you can make new linked worktree (which is clone of original main worktree) and add your new features or fixes on that worktree and then later merge the changes on original main worktree ) 
+Note: This helps to keep the commit histories on original main branch clean
+
+#To create a new linked worktree
+
+//: git worktree add <path> <branchName>
+Example: git worktree add ../mango -b foo 
+(This will create a directory in your root folder/directory with a .git file (Not .git dirctory/folder) which is referenced to original .git folder having a branch name foo)
+
+//: git worktree add ../mango 
+(this will also create a linked worktree with directory named mango and branch also name mango )
+
+#To delete a linked worktree 
+
+//: git remove worktreeName 
+
+or EASY WAY
+
+//: rm -rf ../worktreeName 
+
+then just 
+
+//: git worktree list 
+
+The deleted worktree should show prunable tag on it
+
+//: git worktree prune 
+
+NOTE : you can merge the linked worktree branch with main after creating your feature or bug fix , treat this just like another branch we create on main worktree , as the Primeagen says "it's just a new branch in a different directory all linked and referenced by git , same as always !"
+
+
+
+-------------------------------------------------- Tags
+//: git tag tagName -m "Tag Message"
+NOTE: To create a tag for your apps version like v1.2.3 ( here , v stands for version number, 1 stands for major fix ( This means it will change the code in api and break the compliation ) (.2 means minor fix meaning it has code ammended on api and will not break the compliation ) ( .3 this indicates patch , meaning it has no code amended to break the api ))
+
+//: git tag -d tagName ( To delete that tag )
+NOTE: it will just only delete that tag and not the commit along with code , so it is safe to create and delete tags for your apps version or just for anything you want
+
+//: git tag --list ( To show all the tags created )
+
+------------------------------------------------------------ To remove files or Folders from tracked stage 
+//: git rm -r --cached fileName ( This command is use to make tracked files to be removed from git cached and make them untracked so you can add them to your .gitignore file )

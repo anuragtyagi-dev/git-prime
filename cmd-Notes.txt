@@ -1,0 +1,65 @@
+--Notes for the commands 
+Note: //: iske badd commands hai , aur yeh //: just for indentation and bulletpoint ke liye hai 
+
+//: cd (for changing dirctory or folder )
+
+//: cp (for copying folder )
+
+//: rm (for removing folder )
+
+//: mv (for moving folder )
+
+//: mkdir (for making dirctory or folder )
+
+//: rmdir (for removing dirctory or folder )
+
+//: ls ( list of all folders or directories inside that folder which is selected )
+
+//: ls -Hidden (list of all hidden folders ) 
+
+//: pwd ( shows the present working dirctory )
+
+//: code (for making anything in that folder  )
+
+//: New-Item ItemType ( Example: New-Item mango.txt , to create a file in the current directory )
+
+//: New-Alias -Name nameForAlias -Value commandToBeExecuted ( Example: New-Alias -Name "ls" -Value "Get-ChildItem" Example: New-Alias -Name "cd" -Value "Set-Location" , to create an alias for the command Example: New-Alias -Name file -Value New-Item , to create an alias for the command file )
+
+//: rm -rf fileName ( to remove the file from the current directory ) 
+NOTE: (This command will remove the file and all the files inside that file ) ( This is very powerfull command , use it with caution )
+NOTE: here -r stands for recursive , if you want to remove the file and all the files inside that file , then use -r 
+NOTE: here -f stands for force , if you want to remove the file and all the files inside that file without getting any warning prompt , then use -f 
+
+//: rmdir -r folderName ( to remove the folder from the current directory ) ( NOTE: This command will remove the folder and all the folders inside that folder ) ( This is very powerfull command , use it with caution )
+
+
+//: findstr "stringName" ( To find the string in the current directory )
+(Example: git config --list --global | findstr "user.name" , to find the user.name in the git config list )
+
+//: echo "stringName" ( To print the string in the current directory )
+(Example: echo "Hello World" , to print the string Hello World )
+
+//: echo "stringName" > fileName ( to overwrite the file with only provied string )
+
+//: echo "stringName" >> fileName ( To append the string to the file )
+
+//: cat fileName or FolderName/fileName ( To show the contents inside that folder or file)
+
+//: cat fileName | wc -l ( cat fileName | wordcount -list/line )
+
+//: cp -r Diary/18-Jan-25_Sat/* Diary/19-Jan-25_Sun/
+NOTE: * after directory is used to indicates that we need only contents and subdirectories inside 18/ , otherwise it will copy whole 18JAN folder inside 19JAN
+
+
+//: find . ( this is use to list all items in current directory , as well the current directory (.) )
+
+//: find . -maxdepth 1 ( this command is use for listing items with depth )
+
+//: find . -maxdepth 1 | grep -v -E '^\.$|filename|foldername' | xargs rm -rf 
+
+//: find . -maxdepth 1 -name "filename.extensionname" 
+example: find . -maxdepth 1 -name "main.c"
+
+//: find . -name "main.c" -delete 
+
+//: find . -maxdepth 1 -not -name "main.c" -delete ( to delete all files and folder just main.c remains )
