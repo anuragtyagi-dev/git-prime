@@ -321,6 +321,16 @@ NOTE: --soft is used to reset to the point you want while mainting the current c
 
 //: git reset --hard commitHashCode ( To reset the code to the selected commit )
 
+
+
+# .git/info/excludes
+(in this you can add anything you want git to ignore and you also want not to add them in .gitignore file because .gitignore file also goes at production on github )
+# git .ignore 
+.gitignore file
+
+
+
+
 //: git commit --amend ( To amend the commit )
 (NOTE: yeh tab use hoga jab tumhe previous git commit ka message change karna ho, but note karna ki yeh hash change karta hai yaani new commit bana dega aur vo previous commit aur uska hashcode gayab ho jaega hamesha ke liye )
 
