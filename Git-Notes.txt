@@ -219,7 +219,7 @@ ________________________________________________________________________________
 
 Starting with Git 2.9, the merge command defaults to --allow-unrelated-histories. So, you need to tell Git to allow the merge between two unrelated repositories. To do this, use the --allow-unrelated-histories option with the git merge command: )
 
-                                            #ThePrimaeAgen
+➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️ #ThePrimaeAgen
 ________________________________________________________________________________________
 
 #Git By Primeagen 
@@ -264,7 +264,7 @@ Note : fast_forward merge
 #git rebase 
 
 //: git rebase branchName ( To rebase the branch )
-NOTE: Generally done on main branch from another working branch
+NOTE: always rebase your branch onto main or public branch not the other way around. ( meaning apni branch pe main ya public branch rebase karan hai example : git rebase main )
 
 
 # git rebase as squash
@@ -344,6 +344,7 @@ NOTE: --soft is used to reset to the point you want while mainting the current c
     NOTE: A project can have multiple .gitignore files , .gitignore file can be used to ignore the files and folders in 
     that director and subdirectories, it has no access beyond the parent/current directory )
     
+    # ( # this is use to add comments in .gitignore file )
     .txt ( To ignore the .txt file )
     *.txt ( To ignore all the .txt files )
     /folderName ( To ignore the folderName inside all files and folders )
