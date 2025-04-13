@@ -322,6 +322,14 @@ NOTE: --soft is used to reset to the point you want while mainting the current c
 //: git reset --hard commitHashCode ( To reset the code to the selected commit )
 
 
+# git remote 
+
+//: git remote add origin/main 
+Example: git remote add ../myFolder ( No one told that remote can't be local folder in your laptop, Git remote has nothing to do with github, it can be local folder or repo as well.)
+
+//: git fetch remote or git fetch origin/main 
+
+
 💯💯💯💯💯💯💯💯💯💯💯 
 # .git/info/excludes
 (in this you can add anything you want git to ignore and you also want not to add them in .gitignore file because .gitignore file also goes at production on github )
