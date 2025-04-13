@@ -360,6 +360,15 @@ Example: git remote add ../myFolder ( No one told that remote can't be local fol
     !Important.txt ( To not ignore that Important.txt file )
 )
 
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗ # Merge conflicts Vs Rebase Conflicts
+
+#Merge conflicts 
+--> In merge conflicts , ours is referes to the head pointing at current branch and theirs refers to the other branch that we are merging into our branch.
+
+# Rebase conflicts 
+--> In rebase conflicts , ours is refers to the branch we are rebasing onto ( like main ) and theirs is refers to the branch we rebase into ( like any other branch )
+Reason: rebase works like : when we rebase example: git rebase main , so in this it means , git checkout main and then git shifts the mergebase where that other branch diverted or created on and points the head of main to the top commit and make it merge base for the other branch and then add all the commits of other branch on top of main. so it means , in rebase , the targeted branch  ( branch which is being rebase onto other branch like main onto foo / feature / anyother branch ) behaves or becomes ours ( while rebasing ) and other branch in which rebase is being into ( like foo ) behaves or becomes theirs branch ( while rebasing ).
+
 
 ------------------------------# NOTE: To solve the Multiples conflicts in the files 
 //: git checkout --theirs folderName/fileName ( to checkout and staged the changes and solve the conflicts from their (incoming changes) changes in that file )
