@@ -399,6 +399,8 @@ Reason: rebase works like : when we rebase example: git rebase main , so in this
 //: git stash drop ( to drop the stashed code from the stash stack meaning it will be deleted )
 //: git stash drop "stash@{indexNumber}" ( to apply the stashed code on top of the stash stack and delete that particular stash )
 
+note: you can also add message in stash
+//: git stash -m 'New Message here '
 
 
 --------------------------------------commit amend 
