@@ -381,6 +381,11 @@ Reason: rebase works like : when we rebase example: git rebase main , so in this
 ( It can resolve the conflicts in the files and folders that are occured due to rebase or merge conflicts automatically that are recored previously in the same file for different branch.)
 
 
+------------------------# git rm and git rm --cached fileName
+//: git rm fileName ( it is just use for rm fileName + git add fileName )
+//: git rm .
+//: git rm --cached fileName ( it is used when you accidentally staged some file or folder that you need to unstaged like .env file )
+
 ---------------------------------------Squashing commits using rebase ( it squashes the commits in a single commit without changing the data of a file)
 //: git rebase -i HEAD~n ( n stands for number example: HEAD~3 , to rebase the last 3 commits )
 
