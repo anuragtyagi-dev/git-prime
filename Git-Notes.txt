@@ -371,9 +371,9 @@ Reason: rebase works like : when we rebase example: git rebase main , so in this
 
 
 ------------------------------# NOTE: To solve the Multiples conflicts in the files 
-//: git checkout --theirs folderName/fileName ( to checkout and staged the changes and solve the conflicts from their (incoming changes) changes in that file )
+//: git checkout --theirs folderName or fileName ( to checkout and staged the changes and solve the conflicts from their (incoming changes) changes in that file )
 
-//: git checkout --ours folderName/fileName ( to checkout and staged the changes and solve the conflicts from our (current changes) changes in that file )
+//: git checkout --ours folderName or fileName ( to checkout and staged the changes and solve the conflicts from our (current changes) changes in that file )
 
 ------------------------------# NOTE: rerere config ( reues recorded resolutions )
 //: git config --global rerere.enabled true ( to enable the rerere )
@@ -418,6 +418,16 @@ commands:
 -----------------------------------------revert command 
 //: git revert commitHashCode ( to revert the code to the selected commit )
 NOTE: This will revert the code to the selected commit and create a new commit with the changes made in that commit.
+
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+
+--------------------------------------- git alias config 
+
+//: git config --global alias.anyname "git command you need to asign to an alias"
+
+example: git config --global alias.new "switch -c" ( now if you use git new foo , it will create a new branch foo , it's just like git switch -c foo )
+
+example: git config --global alias.master "checkout main" 
 
 -------------------------------------------cherry-pick command
 
